@@ -9,3 +9,37 @@
 //print out the cost of the meal
 //print out the calculated tax 
 //print out the calculated tip
+
+#include <stdio.h>
+#include "RestaurantBill.h"
+
+
+int main(int arc, char(*argv[]))
+{
+    printf("What was the total cost of your meal?: \n");
+    scanf("%f", &totalCost);
+
+    printf("What is the tax percentage in your area?: \n");
+    scanf("%f", &userReportedTax);
+
+    printf("What is the tip percentage in your area? \n");
+    scanf("%f", &userReportedTip);
+
+    //printf("tC: %f, uRT: %f, uRTi: %f\n", totalCost, userReportedTax, userReportedTip);
+
+
+    userReportedTax = userReportedTax/100;
+    userReportedTip = userReportedTip/100;
+
+    float resultingTax = totalCost*userReportedTax;
+    float resultingTip = totalCost*userReportedTip;
+
+
+    //printf("tC: %f, uRT: %f, uRTi: %f\n", totalCost, userReportedTax, userReportedTip);
+    printf("Cost of Meal: $%.2f, Resulting Tax: $%.2f, Resulting Tip: $%.2f\n[TOTAL COST] : $%.2f", totalCost, 
+                                                                                                    resultingTax, 
+                                                                                                    resultingTip, 
+                                                                                                    totalCost+resultingTax+resultingTip);
+    
+
+}
