@@ -11,19 +11,33 @@
 //print out the calculated tip
 
 #include <stdio.h>
+#include <stdlib.h>
 #include "RestaurantBill.h"
-
 
 int main(int arc, char(*argv[]))
 {
-    printf("What was the total cost of your meal?: \n");
-    scanf("%f", &totalCost);
 
-    printf("What is the tax percentage in your area?: \n");
-    scanf("%f", &userReportedTax);
+    int random = rand()%4;
 
-    printf("What is the tip percentage in your area? \n");
-    scanf("%f", &userReportedTip);
+    if (random == 1)
+    {
+        totalCost = 9.95;
+    }
+    if (random == 1)
+    {
+        totalCost = 4.55;
+    }
+    if (random == 1)
+    {
+        totalCost = 13.25;
+    }
+    if (random == 1)
+    {
+        totalCost = 22.35;
+    }
+
+    userReportedTax = atoi(argv[1]);
+    userReportedTip  = atoi(argv[2]);
 
     //printf("tC: %f, uRT: %f, uRTi: %f\n", totalCost, userReportedTax, userReportedTip);
 
@@ -36,7 +50,7 @@ int main(int arc, char(*argv[]))
 
 
     //printf("tC: %f, uRT: %f, uRTi: %f\n", totalCost, userReportedTax, userReportedTip);
-    printf("Cost of Meal: $%.2f, Resulting Tax: $%.2f, Resulting Tip: $%.2f\n[TOTAL COST] : $%.2f", totalCost, 
+    printf("\nCost of Meal: $%.2f, Resulting Tax: $%.2f, Resulting Tip: $%.2f\n[TOTAL COST] : $%.2f\n", totalCost, 
                                                                                                     resultingTax, 
                                                                                                     resultingTip, 
                                                                                                     totalCost+resultingTax+resultingTip);
